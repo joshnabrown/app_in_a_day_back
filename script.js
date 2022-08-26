@@ -1,5 +1,6 @@
 
-https://api.openweathermap.org/data/2.5/weather?q=Houston&appid=8ce8afaf4483dc8f897935dc85b7667a
+// https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+// https://api.openweathermap.org/data/2.5/weather?q=Houston&appid=8ce8afaf4483dc8f897935dc85b7667a
 
 
 
@@ -9,7 +10,7 @@ let weather = {
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" +
         city +
-        "&units=metric&appid=" +
+        "&units=imperial&appid=" +
         this.apiKey
     )
       .then((response) => {
@@ -17,7 +18,7 @@ let weather = {
           alert("No weather found.");
           throw new Error("No weather found.");
         }
-        // console.log(fetchWeather);
+        console.log(response);
         return response.json();
       })
       .then((data) => this.displayWeather(data));
@@ -58,4 +59,4 @@ document
   });
 
 weather.fetchWeather("Texas");
-weather.fetchWeather("California");
+// weather.fetchWeather("California");
