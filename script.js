@@ -1,3 +1,8 @@
+
+https://api.openweathermap.org/data/2.5/weather?q=Houston&appid=8ce8afaf4483dc8f897935dc85b7667a
+
+
+
 let weather = {
   apiKey: "8ce8afaf4483dc8f897935dc85b7667a",
   fetchWeather: function (city) {
@@ -12,6 +17,7 @@ let weather = {
           alert("No weather found.");
           throw new Error("No weather found.");
         }
+        // console.log(fetchWeather);
         return response.json();
       })
       .then((data) => this.displayWeather(data));
@@ -52,3 +58,4 @@ document
   });
 
 weather.fetchWeather("Texas");
+weather.fetchWeather("California");
